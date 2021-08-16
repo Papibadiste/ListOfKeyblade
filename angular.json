@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "listOfKeyblade"
+  "defaultProject": "listOfKeyblade",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -1,0 +1,30 @@
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+  <div class="form-group">
+    <label for="Name">Email address</label>
+    <input type="text" class="form-control" id="Name" placeholder="Enter name" ngModel>
+  </div>
+  <div class="form-group">
+    <label for="mdp">Password</label>
+    <input type="mdp" class="form-control" id="mdp" placeholder="Password" ngModel>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br>
+<br>
+
+<h3>Choisissez un Maitre de la keyblade</h3>
+<div class="container-fluid" >
+  <div class="row">
+  <div *ngFor="let user of users" class="col-3" >
+
+      <img src="{{ user.img }}" width="100px" heigth="100px">
+      <div>name : {{ user.name }}</div>
+      <div>mdp : {{ user.mdp }}</div>
+      <br>
+
+  </div>
+  </div>
+</div>
+
+
+
