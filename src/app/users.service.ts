@@ -14,12 +14,12 @@ export class UsersService {
     {
       name: 'Kairi',
       mdp: 'Sora',
-      img: 'https://www.nautiljon.com/images/jeuxvideo_persos/00/56/kairi_2965.jpg'
+      img: 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters_opt/kingdom-hearts-kairi.jpg'
     },
     {
       name: 'Riku',
       mdp: 'Ansem',
-      img: 'https://www.nautiljon.com/images/jeuxvideo_persos/00/46/riku_2964.jpg'
+      img: 'https://pbs.twimg.com/profile_images/1101879863256993792/NpC5uZ_k.jpg'
     },
     {
       name: 'Mickey',
@@ -49,4 +49,15 @@ export class UsersService {
   ];
 
   constructor() { }
+
+  // tslint:disable-next-line:typedef
+  public login(array: any){
+    let result;
+    this.users.forEach(user => {
+      if (user.name === array.name &&  user.mdp === array.mdp ){
+        result = true;
+      }
+    });
+    return result ;
+  }
 }
