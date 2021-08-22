@@ -11,6 +11,10 @@ import {Router} from '@angular/router';
 export class HomepageComponent implements OnInit {
 
   public users: UsersService;
+  public userForm: any = [{
+    name : ' ' ,
+    mdp : ' ' ,
+  }];
 
   // tslint:disable-next-line:no-shadowed-variable
   constructor( public UsersService: UsersService, private router: Router) { }
@@ -24,18 +28,26 @@ export class HomepageComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   public onSubmit(userForm: any) {
-    console.log(userForm.value);
+
     const bool: any = this.UsersService.login(userForm.value);
-    console.log(bool);
     if (bool === true){
       localStorage.setItem('name', JSON.stringify(userForm.value.name));
       this.router.navigate(['/master/' + localStorage.getItem('name').split('\"').join('')]);
     }
   }
 
+
   // tslint:disable-next-line:typedef
-  public SelectUser(){
-    console.log('oui');
+  public SelectUser(names){
+    this.userForm = [{
+      name : document.getElementById('name' + names).innerHTML.split(': ')[1] ,
+      mdp : document.getElementById('mdp' + names).innerHTML.split(': ')[1] ,
+    }];
+    const bool: any = this.UsersService.login(this.userForm[0]);
+    if (bool === true){
+      localStorage.setItem('name', JSON.stringify(this.userForm[0].name));
+      this.router.navigate(['/master/' + localStorage.getItem('name').split('\"').join('')]);
+    }
   }
 
 }

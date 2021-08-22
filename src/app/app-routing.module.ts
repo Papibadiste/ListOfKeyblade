@@ -6,7 +6,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { MasterKeybladeComponent } from './master-keyblade/master-keyblade.component';
 
 const routes: Routes = [
-  { path: 'master/:id', component: MasterKeybladeComponent, pathMatch: 'full' },
+  { path: 'master/:name', component: MasterKeybladeComponent, pathMatch: 'full' },
   { path: '', component: HomepageComponent }
 ];
 

@@ -1,1 +1,32 @@
-<p>master-keyblade works!</p>
+<div class="body">
+  <h3 class="title">{{ userInfo[0].name }}</h3>
+  <div class="container-fluid" >
+    <div class="row">
+
+        <img src="{{ userInfo[0].img }}" width="300px" heigth="300px">
+        <div >Description : {{ userInfo[0].desc }}</div>
+        <br>
+
+    </div>
+  </div>
+  <button type="button" class="btn btn-secondary" (click)="Disconnect()">Changer de maitre</button>
+  <br>
+  <h3>Liste des keyblades</h3>
+  <br>
+  <div class="container-fluid" >
+    <div class="row">
+      <br>
+      <div *ngFor="let user of userInfo[1]" class="col-12"  >
+
+          <div >Name : {{ user.name }}</div><br>
+          <div >Description : {{ user.desc }}</div>
+
+        <br><br><br>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+

@@ -1,12 +1,12 @@
 <div class="body">
-<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" id='formConnect'>
   <div class="form-group">
     <label for="Name">Name</label>
     <input type="text" class="form-control" id="Name" placeholder="Enter name" name="name" ngModel>
   </div>
   <div class="form-group">
     <label for="mdp">Password</label>
-    <input type="text" class="form-control" id="mdp" placeholder="Password" name="mdp" ngModel>
+    <input type="text" class="form-control" id="Mdp" placeholder="Password" name="mdp" ngModel>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
@@ -16,11 +16,11 @@
 <h3>Choisissez un Maitre de la keyblade</h3>
 <div class="container-fluid" >
   <div class="row">
-  <div *ngFor="let user of users" class="col-3" (click)="SelectUser()" >
+  <div *ngFor="let user of users" class="col-3" (click)="SelectUser(user.name)" >
 
       <img src="{{ user.img }}" width="100px" heigth="100px">
       <div id="name{{ user.name }}">name : {{ user.name }}</div>
-      <div id="name{{ user.mdp }}">mdp : {{ user.mdp }}</div>
+      <div id="mdp{{ user.name }}">mdp : {{ user.mdp }}</div>
       <br>
 
   </div>
